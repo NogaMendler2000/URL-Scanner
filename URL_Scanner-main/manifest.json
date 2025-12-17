@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "URL Scanner",
+  "version": "1.2",
+  "description": "This extension scans the URL for malicious content using VirusTotal and Google Safe Browsing API.",
+  "icons": {
+    "48": "icon.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "webNavigation",
+    "downloads",
+    "downloads.open",
+    "notifications",
+    "storage",
+    "webRequest",
+    "declarativeNetRequest",
+    "nativeMessaging",
+    "declarativeNetRequestFeedback"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "file://*",
+    "https://www.virustotal.com/*",
+    "https://safebrowsing.googleapis.com/*"
+  ],
+  "background": {
+  "service_worker": "background.js",
+  "type": "module"
+},
+  "action": {
+    "default_popup": "./popup/popup.html",
+    "default_icon": {
+      "48": "icon.png"
+    }
+  }
+}
